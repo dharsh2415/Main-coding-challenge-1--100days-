@@ -1,0 +1,330 @@
+*{
+            margin: 0;
+            text-decoration: none;
+            padding:0;
+            scroll-behavior: smooth;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .head-container{
+            background-color: rgb(42, 42, 42);
+            padding: 12px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .top-right button{
+            display: flex;
+            background-color: #3f730a;
+            padding: 7px 15px;
+            font-size: 15px;
+            color: aliceblue;
+            border-radius: 7px;
+            border: 0;
+        }
+        .subheader{
+            background-color: #3f730a;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-left: 30px;
+            color: white;
+        }
+        .sub1 a{
+            padding-right: 5px;
+        }
+        .dollar{
+            display: flex;
+            padding-right: 30px;
+        }
+        .dollar p{
+            font-size: 15px;
+        }
+        .subheader .sub1 a{
+            font-size: 14px; 
+            color: white;       
+        }
+        .dollar span{
+            background-color: white;
+            padding: 4px 10px;
+            color: black;
+            border-radius: 8px;
+        }
+        .image-section{
+            min-height: 72vh;
+            width: 100%;
+            background-image: linear-gradient(rgba(24, 24, 24, 0.7)),url(image/breadcrumb.jpg);
+            background-position: center;
+            position:relative ;
+        }
+        .image-section nav{
+            display: flex;
+            justify-content: space-between;
+            padding: 2% 1%;
+
+        }
+        .nav-link{
+            display: flex;
+        }
+        .search a{
+            font-size: 14px;
+        }
+        .image-section i{
+            color: white;
+        }
+        .image-section a{
+            color: white;
+            padding-right: 14px;
+            font-size: 14px;
+        }
+        .image-section span{
+            color: white;
+            font-size: 15px;
+        }
+        .center-section{
+            color: white;
+            width: 90%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            text-align: center;
+        }
+        .center-section h1{
+            font-size: 50px;
+            padding: 20px;
+        }
+        .center-section p{
+            font-size: 18px;
+        }
+        .product{
+            display:flex;
+        }
+        .product1{
+            display: flex;
+        }
+        .product1 img{
+            border: 1px solid  rgb(255, 255, 255);
+            border-radius: 100%;
+            width: 220px;
+            padding: 15px;
+            
+        }
+        .product1 span{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            font-size: 20px;
+            margin-bottom: 80px;
+        }
+        .items p{
+            font-family: 'Edwardian Script ITC';
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgb(241, 158, 6);
+            font-size: 35px;
+            padding-top: 100px;
+            padding-bottom: 20px;
+        }
+        .items span{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #3f730a;
+            font-size: 30px;
+            padding-bottom: 50px;
+        }
+        .column-section{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid gray;
+            margin-bottom: 15px;
+        }
+        .column-section small{
+            padding-left: 30px;
+            color: rgb(87, 85, 85);
+        }
+        .grids{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+             margin-bottom: 15px;
+             
+        }
+        .flex-section{
+            padding: 5px 15px;
+            border: 1px solid rgb(157, 154, 154);
+            border-radius: 20px;
+            margin-right: 15px;
+            
+        }
+        .grid-section{
+            padding: 5px 15px;
+            border: 1px solid rgb(157, 154, 154);
+            border-radius: 20px;
+            margin-right: 15px;
+        }
+        .sorting button{
+            padding: 10px 40px;
+            border-radius: 20px;
+            background-color: white;
+            margin-right: 30px;
+            border-color: rgb(157, 154, 154);
+            font-size: 14px;
+        }
+        .primary img{
+            border-bottom: 1px solid rgb(195, 190, 190);
+            padding-bottom: 20px;
+            padding-top: 15px;
+        }
+        .primary .a{
+            font-size: 15px;
+            padding: 5px 10px;
+            color: rgb(65, 108, 1);   
+        }
+        .primary .b{
+            font-size: 17.5px;
+            font-weight: 600;
+            padding: 3px 10px;
+        }
+        .primary span{
+            font-size: 13.5px;
+            padding:  6px 10px; 
+            
+        }
+        .primary strong{
+            font-size: 14px;   
+        }  
+
+        .first{
+            height: 410px;
+            width: 325px;
+            border: 1px solid rgb(251, 251, 251);
+            padding-left: 20px; 
+            background-color: rgb(251, 251, 251);
+            border-radius: 15px;
+                      
+        }
+        .primary{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            margin-top: 60px;
+            
+        }
+        .second{
+            height: 410px;
+            width: 325px;
+            padding-left: 20px;  
+            border: 1px solid rgb(251, 251, 251);  
+            background-color: rgb(251, 251, 251);
+            border-radius: 15px;
+        }
+        .third{
+            height: 410px;
+            width: 325px;
+            border: 1px solid grey;
+            padding-left: 20px;  
+            border: 1px solid rgb(251, 251, 251); 
+            background-color: rgb(251, 251, 251);
+            border-radius: 15px;
+        }
+        .fourth{
+            height: 410px;
+            width: 325px;
+            border: 1px solid grey;
+            padding-left: 20px;  
+            border: 1px solid rgb(251, 251, 251); 
+            background-color: rgb(251, 251, 251);
+            border-radius: 15px;
+        }
+        .secondary{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            margin-top: 60px;
+        }
+        .secondary img{
+            border-bottom: 1px solid rgb(195, 190, 190);
+            padding-bottom: 20px;
+            padding-top: 15px;
+        }
+        .secondary .a{
+            font-size: 15px;
+            padding: 5px 10px;
+            color: #3f730a;   
+        }
+        .secondary .b{
+            font-size: 17.5px;
+            font-weight: 600;
+            padding: 3px 10px;
+        }
+        .secondary span{
+            font-size: 13.5px;
+            padding:  6px 10px; 
+            
+        }
+        .secondary strong{
+            font-size: 14px;   
+        } 
+        .slide-section{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 60px;
+        }
+        .slide1{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 100px;
+
+        }
+        .slide1 button{
+            padding:  10px 15px;  
+            margin-right: 5px;
+            border: 0;
+        }
+        .box1 button{
+            color: white;
+            background-color: #3f730a;
+        }
+        .footer-container{
+            display: flex;
+            align-items: center;
+        
+        }
+        .contact{
+            display: flex;
+            justify-content: space-evenly;
+            align-content: center;
+            background-color: #0a472e;
+            color: white;
+            height: 300px;
+            width: 160%;
+            padding-top: 40px;
+            line-height: 2rem;
+            margin-left: 7px;
+        }
+        .line5 img{
+            border-radius: 10px;
+        }
+        .contact{
+            font-size: 14px;
+        }
+        .end-section{
+            display: flex;
+            padding: 20px 10px;
+            color: grey;
+        }
+        .end {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .end-section p{
+            padding-left: 55rem;
+        }
