@@ -1,0 +1,417 @@
+html {
+            scroll-behavior: smooth;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif; 
+        }
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            background-color: #ffff; 
+            position: fixed; 
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000; 
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06); 
+        }
+
+        body {
+            padding-top: 70px; 
+        }
+
+        .top-bar h2 {
+            font-size: 35px;
+            color: #333;
+            font-family: "Georgia", serif; 
+            font-weight: 700;
+        }
+        .nav-bar a {
+            margin: 0 18px; 
+            text-decoration: none;
+            color: #555;
+            font-size: 16px;
+            font-weight: 600;
+            transition: color 0.3s ease, transform 0.3s ease;
+            position: relative;
+        }
+        .nav-bar a:hover {
+            color: #ff6347; 
+            transform: translateY(-2px);
+        }
+        .nav-bar a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            display: block;
+            margin-top: 5px;
+            right: 0;
+            background: #ff6347;
+            transition: width 0.3s ease;
+        }
+        .nav-bar a:hover::after {
+            width: 100%;
+            left: 0;
+            background: #ff6347;
+        }
+
+
+        .header {
+            width: 100%;
+            min-height: 100vh;
+            background: linear-gradient(rgba(109, 108, 108, 0.5), rgba(120, 120, 120, 0.5)), url('image/Screenshot 2025-10-25 143519.png');
+            background-position: center;
+            background-size: cover;
+            position: relative;
+        }
+        .header strong {
+            position: absolute;
+            top: 40%;
+            left: 6%;
+            color: #fff;
+            font-size: 50px;
+            font-weight: 700;
+            font-family: "Georgia", serif;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .header span {
+            font-size: 48px;
+            font-family: "Georgia", serif;
+            color: #fff;
+        }
+        .header p {
+            position: absolute;
+            top: 48%;
+            left: 6%;
+            color: #fff;
+            font-size: 40px;
+            font-weight: normal;
+            font-family: "Georgia", serif;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        .header button {
+            position: absolute;
+            top: 60%;
+            left: 6%;
+            padding: 15px 30px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #ff6347; 
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease; 
+        }
+        .header button:hover {
+            background-color: #e5533d; 
+            transform: scale(1.05); 
+        }
+        .box-section {
+            display: flex;
+            justify-content: space-around;
+            padding: 50px;
+            background-color: #f9f9f9;
+            flex-wrap: wrap; 
+            gap: 20px;
+        }
+        .first-box, .second-box, .Third-box {
+            color: #fff; 
+            padding: 30px;
+            text-align: center; 
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border-radius: 10px;
+            width: 30%; 
+            background-position: center;
+            background-size: cover;
+            background-blend-mode: multiply;
+            min-height: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .first-box:hover, .second-box:hover, .Third-box:hover {
+            box-shadow: 0 15px 20px -5px rgba(0, 0, 0, 0.2), 0 6px 8px -3px rgba(0, 0, 0, 0.1);
+        }
+        .first-box {
+            background: linear-gradient(rgba(109, 108, 108, 0.5), rgba(120, 120, 120, 0.5)), url('image/10.png');
+            background-position: center;
+            background-size: cover;
+        }
+        .second-box {
+            background: linear-gradient(rgba(109, 108, 108, 0.5), rgba(120, 120, 120, 0.5)), url('image/Screenshot 2025-10-25 141341.png');
+            background-position: center;
+            background-size: cover;
+        }
+        .Third-box {
+            background: linear-gradient(rgba(109, 108, 108, 0.5), rgba(120, 120, 120, 0.5)), url('image/Elegant rose bouquet _ Free Photo.jpeg');
+            background-position: center;
+            background-size: cover;
+        }
+        
+        .first-box h2, .second-box h2, .Third-box h2 {
+            font-size: 32px;
+            margin-bottom: 5px;
+            color: #fff; 
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+        .first-box p, .second-box p, .Third-box p {
+            font-size: 17px;
+            margin-bottom: 20px;
+            color: #fff; 
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+        .first-box button, .second-box button, .Third-box button {
+            padding: 10px 20px;
+            font-size: 14px;
+            color: #fff;
+            background-color: #ff6347; 
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .first-box button:hover, .second-box button:hover, .Third-box button:hover {
+            background-color: #e5533d; 
+            transform: scale(1.05);
+        }
+        .about-section {
+            display: flex;
+            padding: 50px;
+            background-color: #f0f0f0;
+
+        }
+        .left-bar {
+            width: 50%;
+            padding-right: 20px;
+        }
+        .left-bar h2 {
+            font-size: 40px;
+            margin-bottom: 25px;
+            color: #333;
+            font-family: 'Playfair Display', serif;
+            border-bottom: 3px solid #ff6347;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+        .left-bar p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #555;
+        }
+        .right-bar {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .right-bar img {
+            max-width: 50%;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .product-section {
+            padding: 50px;
+            background-color: #fff;
+            text-align: center;
+        }
+        .product-section h2 {
+            font-size: 40px;
+            margin-bottom: 25px;
+            color: #333;
+            font-family: 'Playfair Display', serif;
+            border-bottom: 3px solid #ff6347;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+        .items-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .flowers {
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .flowers img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        .flowers img:hover {
+            transform: scale(1.1);
+        }
+        .offer-section {
+            background-color: #fff;
+            text-align: center;
+            padding: 80px 5%; 
+        }
+        .section-title{
+            font-size: 40px;
+            margin-bottom: 25px;
+            color: #333;
+            font-family: 'Playfair Display', serif;
+            border-bottom: 3px solid #ff6347;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+        .offer-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .offer-card {
+            flex: 1 1 300px; 
+            padding: 30px;
+            background-color: var(--light-bg);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+        }
+        .offer-card::before {
+            content: ''; 
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 100% 0%, rgba(255, 99, 71, 0.1), transparent 50%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: -1;
+        }
+
+.offer-card:hover {
+    transform: perspective(1000px) translateY(-10px) rotateX(1deg);
+    box-shadow: 0 20px 50px rgba(255, 99, 71, 0.35); 
+}
+
+.offer-card:hover::before {
+    opacity: 1;
+}
+
+.offer-card h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--text-dark); 
+    font-size: 28px;
+    margin-bottom: 15px;
+    position: relative;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.offer-card h3 i {
+    margin-right: 10px;
+    color: var(--primary-color);
+}
+
+.offer-card p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+}
+        .contact-section {
+            padding: 50px;
+            background-color: #ffff;
+        }
+        .contact-info {
+            display: flex;
+            justify-content: space-between;
+        }
+        .contact, .contact-right, .contact-down {
+            width: 30%;
+        }
+        .contact h2, .contact-right h2, .contact-down h2 {
+            font-size: 40px;
+            margin-bottom: 25px;
+            color: #333;
+            font-family: 'Playfair Display', serif;
+            border-bottom: 3px solid #ff6347;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+        .contact p, .contact-right p, .contact-down p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: black;
+        }
+        .contact-down i {
+            font-size: 28px;
+            margin-right: 15px;
+            color: #050505;
+            transition: color 0.3s ease;
+        }
+        .contact-down i:hover {
+            color: #ff6347;
+        }
+        .copyright-bar {
+            text-align: center;
+            color: #888;
+            font-size: 14px;
+            padding: 20px 0 0;
+            margin-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            }
+        
+        @media (max-width: 992px) {
+            .first-box, .second-box, .Third-box {
+                width: 48%;
+            }
+        }
+        @media (max-width: 768px) {
+            .top-bar {
+                padding: 15px 10px;
+            }
+            .top-bar h2 {
+                font-size: 30px;
+            }
+            .header strong {
+                font-size: 40px;
+            }
+            .header p {
+                font-size: 30px;
+                top: 50%;
+            }
+            .header button {
+                top: 65%;
+            }
+            .left-bar, .right-bar {
+                width: 100%;
+                padding-right: 0;
+                margin-bottom: 30px;
+            }
+            .right-bar img {
+                 max-width: 60%;
+            }
+            .first-box, .second-box, .Third-box {
+                width: 100%;
+            }
+            .flowers {
+                width: 45%;
+                height: 150px;
+            }
+            .contact-info {
+                justify-content: center;
+            }
+            .contact, .contact-right, .contact-down {
+                flex: 1 1 90%;
+                text-align: left;
+                margin-bottom: 30px;
+            }
+        }
