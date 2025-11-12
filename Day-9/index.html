@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-commerce Cart </title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <h1>E-commerce</h1>
+    <div class="cart-container">
+      <button class="cart-button" id="cartToggleButton">
+        <i class="fas fa-shopping-cart cart-icon"></i>
+      </button>
+      <span class="cart-count" id="itemCount">0</span>
+
+      <div class="cart-card" id="cartCard">
+        <h3>Shopping Cart</h3>
+        <div id="cartItemsList">
+          <p class="empty-cart-message">Your cart is empty.</p>
+        </div>
+        <div class="cart-total">Total: $<span id="cartTotal">0.00</span></div>
+        <button id="checkoutBtn" class="checkout-btn">Checkout</button>
+
+        <div id="checkoutBox" style="display: none;">
+          <h4>Checkout Details</h4>
+          <form id="checkoutForm">
+            <input type="text" id="customerName" placeholder="Full Name" required>
+            <input type="email" id="customerEmail" placeholder="Email" required>
+            <textarea id="customerAddress" placeholder="Delivery Address" required></textarea>
+            <button type="submit" class="checkout-btn">Confirm Order</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="main-content">
+    <div class="product-card">
+      <img src="https://tse2.mm.bing.net/th/id/OIP.a1K9pxN45p54XXLOm0I1ogHaE1?cb=ucfimg2ucfimg=1&w=765&h=500&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Cool Widget">
+      <h2>Cool Widget</h2>
+      <p>The coolest widget you will ever own.</p>
+      <p style="font-size: 1.5em; color: #e74c3c;">Rs.1500</p>
+      <button class="add-to-cart" data-name="Cool Widget" data-price="1500" data-img="https://tse2.mm.bing.net/th/id/OIP.a1K9pxN45p54XXLOm0I1ogHaE1?cb=ucfimg2ucfimg=1&w=765&h=500&rs=1&pid=ImgDetMain&o=7&rm=3">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/I/71i0MvovfGL._AC_SL1500_.jpg" alt="Smart Watch">
+      <h2>Smart Watch</h2>
+      <p>Track fitness and style together.</p>
+      <p style="font-size: 1.5em; color: #e74c3c;">Rs.1350</p>
+      <button class="add-to-cart" data-name="Smart Watch" data-price="1350" data-img="https://m.media-amazon.com/images/I/71i0MvovfGL._AC_SL1500_.jpg">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://tse2.mm.bing.net/th/id/OIP.oobANxELvFJjWIHx1Y6VxQHaHa?cb=ucfimg2ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Headphones">
+      <h2>Wireless Headphones</h2>
+      <p>High-quality sound without the wires.</p>
+      <p style="font-size: 1.5em; color: #e74c3c;">Rs.2500</p>
+      <button class="add-to-cart" data-name="Wireless Headphones" data-price="2500" data-img="https://tse2.mm.bing.net/th/id/OIP.oobANxELvFJjWIHx1Y6VxQHaHa?cb=ucfimg2ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3">Add to Cart</button>
+    </div>
+  </div>
+
+  <script>
+    const itemCountEl = document.getElementById('itemCount');
+    const cartToggleButton = document.getElementById('cartToggleButton');
+    
+    const cartCard = document.getElementById('cartCard');
+    const cartItemsList = document.getElementById('cartItemsList');
+    const cartTotalEl = document.getElementById('cartTotal');
+    const addToCartButtons = document.querySelectorAll('.add-to-cart');
+    const checkoutBtn = document.getElementById('checkoutBtn');
+    const checkoutBox = document.getElementById('checkoutBox');
+    const checkoutForm = document.getElementById('checkoutForm');
+
+    let cart = [];
+
+    function updateCartBadge() {
+      const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+      itemCountEl.textContent = totalItems;
+    }
+
+    function renderCartCard() {
+      cartItemsList.innerHTML = '';
+      let total = 0;
+
+      if (cart.length === 0) {
+        cartItemsList.innerHTML = '<p class="empty-cart-message">Your cart is empty.</p>';
+      } else {
+        cart.forEach(item => {
+          const itemTotal = item.price * item.quantity;
+          total += itemTotal;
+
+          const itemEl = document.createElement('div');
+          itemEl.classList.add('cart-item');
+          itemEl.innerHTML = `
+            <img src="${item.img}" alt="${item.name}">
+            <div class="cart-item-details">
+              <span>${item.name}</span>
+              <small>$${item.price.toFixed(2)} each</small>
+            </div>
+            <div class="cart-item-controls">
+              <div>
+                <button class="quantity-btn" onclick="changeQuantity('${item.name}', -1)">-</button>
+                ${item.quantity}
+                <button class="quantity-btn" onclick="changeQuantity('${item.name}', 1)">+</button>
+              </div>
+              <button onclick="removeItem('${item.name}')"><i class="fas fa-trash"></i></button>
+            </div>
+          `;
+          cartItemsList.appendChild(itemEl);
+        });
+      }
+
+      cartTotalEl.textContent = total.toFixed(2);
+    }
+
+    function addItemToCart(name, price, img) {
+      const existingItem = cart.find(item => item.name === name);
+
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        cart.push({ name, price, quantity: 1, img });
+      }
+
+      updateCartBadge();
+      renderCartCard();
+    }
+
+    function changeQuantity(name, delta) {
+      const item = cart.find(i => i.name === name);
+      if (item) {
+        item.quantity += delta;
+        if (item.quantity <= 0) {
+          cart = cart.filter(i => i.name !== name);
+        }
+      }
+      updateCartBadge();
+      renderCartCard();
+    }
+
+    function removeItem(name) {
+      cart = cart.filter(item => item.name !== name);
+      updateCartBadge();
+      renderCartCard();
+    }
+
+    function toggleCartCard() {
+      cartCard.classList.toggle('show');
+    }
+
+    addToCartButtons.forEach(button => {
+      button.addEventListener('click', e => {
+        const name = e.target.dataset.name;
+        const price = parseFloat(e.target.dataset.price);
+        const img = e.target.dataset.img;
+        addItemToCart(name, price, img);
+      });
+    });
+
+    cartToggleButton.addEventListener('click', toggleCartCard);
+
+    checkoutBtn.addEventListener('click', () => {
+      checkoutBox.style.display = checkoutBox.style.display === 'none' ? 'block' : 'none';
+    });
+
+    checkoutForm.addEventListener('submit', e => {
+      e.preventDefault();
+      alert('Order placed successfully!');
+      checkoutForm.reset();
+      checkoutBox.style.display = 'none';
+      cart = [];
+      renderCartCard();
+      updateCartBadge();
+    });
+
+    renderCartCard();
+  </script>
+</body>
+</html>
