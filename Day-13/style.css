@@ -1,0 +1,332 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #fafafa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #262626;
+}
+
+/* Card Container */
+.card-container {
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
+    border-radius: 8px; 
+    width: 470px; 
+    max-width: 100%;
+    margin: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); 
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 16px;
+    border-bottom: 1px solid #efefef;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.profile-pic-gradient {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    padding: 2px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 12px;
+    cursor: pointer;
+}
+
+.profile-pic {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid #fff; 
+    object-fit: cover;
+}
+
+.username-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.username {
+    font-weight: 600;
+    font-size: 14px;
+    color: #262626;
+    cursor: pointer;
+}
+
+.username:hover {
+    text-decoration: underline;
+}
+
+.location {
+    font-size: 12px;
+    color: #262626;
+}
+
+.more-options-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.card-image {
+    width: 100%;
+    position: relative;
+    background-color: #efefef;
+    min-height: 100px; 
+    overflow: hidden;
+}
+
+#post-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.heart-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    pointer-events: none;
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 0;
+}
+
+.heart-overlay.active {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 1;
+    animation: heart-bounce 1s ease forwards;
+}
+
+@keyframes heart-bounce {
+    0% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+    15% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.9; }
+    30% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.9; }
+    45% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.9; }
+    80% { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
+    100% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+}
+
+
+/* Actions */
+.card-actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 16px 8px; 
+}
+
+.left-actions, .right-actions {
+    display: flex;
+    align-items: center;
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    transition: transform 0.1s;
+    color: #262626;
+}
+
+.left-actions .action-btn {
+    margin-right: 8px; 
+    padding-left: 0;
+}
+
+.action-btn:hover {
+    transform: scale(1.1);
+    color: #8e8e8e;
+}
+
+.action-btn svg {
+    display: block;
+}
+
+/* Like Heart Red */
+.heart-icon.filled {
+    color: #ed4956;
+    animation: like-pulse 0.45s ease-in-out;
+}
+
+@keyframes like-pulse {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.2); }
+    50% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+}
+
+/* Text Content */
+.likes-section {
+    padding: 0 16px;
+    margin-bottom: 8px;
+}
+
+.likes-count {
+    font-weight: 600;
+    font-size: 14px;
+    color: #262626;
+}
+
+.caption-section {
+    padding: 0 16px;
+    margin-bottom: 8px;
+}
+
+.caption-username {
+    font-weight: 600;
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+.caption-text {
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.comments-section {
+    padding: 0 16px;
+    margin-bottom: 8px;
+}
+
+.comment {
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.comment-user {
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+.time-posted {
+    padding-left: 16px;
+    font-size: 10px;
+    color: #8e8e8e;
+    margin-bottom: 12px;
+    letter-spacing: 0.2px;
+}
+
+.add-comment-section {
+    border-top: 1px solid #efefef;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+}
+
+#comment-input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+.post-comment-btn {
+    background: none;
+    border: none;
+    color: #0095f6;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.post-comment-btn:hover {
+    opacity: 1;
+}
+
+#comment-input:valid + .post-comment-btn {
+    opacity: 1; /* Highlight when typing */
+}
+
+/* Modal */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 100; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.6); 
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    border-radius: 12px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    animation: modal-pop 0.3s ease-out;
+}
+
+@keyframes modal-pop {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.modal-content p {
+    text-align: center;
+    padding: 20px;
+    font-weight: 600;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.share-option {
+    background: none;
+    border: none;
+    border-bottom: 1px solid #dbdbdb;
+    padding: 15px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.share-option:last-child {
+    border-bottom: none;
+}
+
+.share-option:hover {
+    background-color: #f0f0f0;
+}
+
+.close {
+    display: none; 
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+    .card-container {
+        width: 100%;
+        border: none;
+        box-shadow: none;
+        margin: 0;
+    }
+}

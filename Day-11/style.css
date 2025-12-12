@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0f0c29; /* Fallback */
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Background Animated Shapes for "Unique & Colorful" vibe */
+.background-shapes .shape {
+    position: absolute;
+    filter: blur(50px);
+    z-index: 1;
+    opacity: 0.6;
+    animation: float 6s ease-in-out infinite;
+}
+
+.shape-1 {
+    top: -10%;
+    left: -10%;
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(#f093fb, #f5576c);
+    border-radius: 50%;
+}
+
+.shape-2 {
+    bottom: -10%;
+    right: -5%;
+    width: 250px;
+    height: 250px;
+    background: linear-gradient(#4facfe, #00f2fe);
+    border-radius: 50%;
+    animation-delay: 2s;
+}
+
+.shape-3 {
+    top: 40%;
+    right: 30%;
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(#8ec5fc, #e0c3fc);
+    border-radius: 50%;
+    animation-delay: 4s;
+    filter: blur(40px);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-20px) scale(1.05); }
+}
+
+/* Container & Glassmorphism Card */
+.container {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.contact-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 40px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    color: #fff;
+}
+
+.card-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.card-header h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.card-header p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Flexbox Form Layout */
+.contact-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 45%; /* Two columns layout */
+    min-width: 200px; /* Responsive wrapping */
+}
+
+.form-group.full-width {
+    flex: 1 1 100%;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.form-group input, 
+.form-group textarea {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 12px 15px;
+    color: #fff;
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.form-group input::placeholder, 
+.form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+    border-color: #4facfe;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 10px rgba(79, 172, 254, 0.3);
+}
+
+/* Button with Gradient */
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 5px 15px rgba(118, 75, 162, 0.4);
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(118, 75, 162, 0.6);
+}
+
+.submit-btn:active {
+    transform: translateY(1px);
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .contact-card {
+        padding: 30px 20px;
+    }
+    
+    .form-group {
+        flex: 1 1 100%;
+    }
+}

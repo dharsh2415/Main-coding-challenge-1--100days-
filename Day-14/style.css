@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #cfd9e6;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+.container {
+    width: 380px;
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header .date {
+    color: #7a8ca8;
+}
+
+.header .time {
+    color: #7a8ca8;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.week {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.day {
+    text-align: center;
+    width: 40px;
+    color: #7a8ca8;
+}
+
+.day p {
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.day.active p {
+    background: #0c3c7c;
+    color: white;
+}
+
+.task-list {
+    margin-top: 10px;
+}
+
+.task {
+    background: #e7f0ff;
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.checkbox {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.checkbox.checked {
+    background: #0bb34b;
+    border-color: #0bb34b;
+}
+
+.task.completed p {
+    text-decoration: line-through;
+    color: #8ea1bd;
+}
+
+.time-tag {
+    background: #dbe7ff;
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 12px;
+    color: #5d73a1;
+}
+
+.add-box {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.add-box input, .add-box button {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #d0d0d0;
+}
+
+.add-box button {
+    background: #0c3c7c;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.add-box button:hover {
+    opacity: 0.8;
+}

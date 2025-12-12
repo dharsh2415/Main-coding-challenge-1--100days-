@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Colorful Design</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="background-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+    
+    <div class="container">
+        <div class="contact-card">
+            <div class="card-header">
+                <h2>Get in Touch</h2>
+                <p>We'd love to hear from you. Send us a message!</p>
+            </div>
+            
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="John Doe" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                </div>
+                
+                <div class="form-group full-width">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" placeholder="What is this about?" required>
+                </div>
+                
+                <div class="form-group full-width">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Your message here..." required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn" id="submitBtn">Send Message</button>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+      // Simple interaction for the button
+      const btn = document.getElementById('submitBtn');
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        btn.innerHTML = 'Sending...';
+        btn.style.opacity = '0.7';
+        setTimeout(() => {
+          btn.innerHTML = 'Message Sent!';
+          btn.style.backgroundColor = '#4caf50';
+          setTimeout(() => {
+             btn.innerHTML = 'Send Message';
+             btn.style.backgroundColor = '';
+             btn.style.opacity = '1';
+             document.querySelector('form').reset();
+          }, 2000);
+        }, 1500);
+      });
+    </script>
+</body>
+</html>

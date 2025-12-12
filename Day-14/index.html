@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <div>
+            <p class="date"></p>
+            <h2>To-do List</h2>
+        </div>
+        <p class="time"></p>
+    </div>
+
+    <!-- Week Days -->
+    <div class="week">
+        <div class="day active">
+            <span>Sun</span>
+            <p>24</p>
+        </div>
+        <div class="day"><span>Mon</span><p>25</p></div>
+        <div class="day"><span>Tue</span><p>26</p></div>
+        <div class="day"><span>Wed</span><p>27</p></div>
+        <div class="day"><span>Thu</span><p>28</p></div>
+        <div class="day"><span>Fri</span><p>29</p></div>
+        <div class="day"><span>Sat</span><p>30</p></div>
+    </div>
+
+    <!-- To-Do List -->
+    <div id="taskList" class="task-list">
+        <!-- Tasks appear here dynamically -->
+    </div>
+
+    <!-- Add Task -->
+    <div class="add-box">
+        <input type="text" id="taskInput" placeholder="New Task...">
+        <input type="time" id="taskTime">
+        <button onclick="addTask()">Add</button>
+    </div>
+
+</div>
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A powerful and aesthetic Todo Application to manage your daily tasks.">
+    <title>TaskMaster | Efficient Todo List</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="background-gradient"></div>
+
+    <main class="container">
+        <div class="glass-card">
+            <header class="header">
+                <h1>My Tasks</h1>
+                <p>Stay organized and productive</p>
+                <div class="date-display" id="date-display"></div>
+            </header>
+
+            <div class="input-area">
+                <form id="todo-form">
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-list-check icon"></i>
+                        <input type="text" id="todo-input" placeholder="What needs to be done?" autocomplete="off">
+                        <button type="submit" class="add-btn" aria-label="Add Task">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="stats-bar">
+                <span id="tasks-count">0 items</span>
+                <button id="clear-all" class="clear-btn">Clear All</button>
+            </div>
+
+            <ul id="todo-list" class="todo-list">
+                
+                <li class="empty-state">
+                    <i class="fa-solid fa-clipboard-check"></i>
+                    <p>No tasks yet. Add one above!</p>
+                </li>
+            </ul>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
